@@ -28,4 +28,17 @@ FreeSwitch configuration use MySQL in Core
 		2.2	edit file /opt/freeswitch/conf/autoload_configs/switch.conf.xml 
 			<!-- <param name="core-db-dsn" value="dsn:username:password" /> -->
 			change to
-			<param name="core-db-dsn" value="freeswitch:freeswitch:freeswitch" />	
+			<param name="core-db-dsn" value="freeswitch:freeswitch:freeswitch" />
+			
+	3.	enable cac module lien quan:
+			-	mod_easyroute
+			-	mod_lcr
+			-	mod_xml_curl
+			-	mod_xml_rpc
+			-	mod_flite
+			-	edit file vi /etc/freeswitch/autoload_configs/modules.conf.xml. Uncomment/them cac dong
+				+	mod_xml_curl
+				+	mod_easyroute
+				+	mod_lcr
+				+	mod_xml_rpc
+				+	mod_flite
