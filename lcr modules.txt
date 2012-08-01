@@ -148,38 +148,39 @@ least cost routing Configuration:
   
   
   cau hinh de FS dung lcr tren dialplan:
-	+ tao file /etc/freeswitch/dialplan/default/01_thm.xml:
-	<include>
-	  <extension name="thm_local">
-	    <!--<condition field="${toll_allow}" expression="local"/> -->
-		<condition field="destination_number" expression="^08(\d{8})$">
-		  <action application="lcr" data="$0"/>
-		  <action application="bridge" data="${lcr_auto_route}"/>
-		</condition>
-	  </extension>
+    +	cac file tao phai bat dau bang so 0: 0[1-9]_[a-z].xml
+	+ 	tao file /etc/freeswitch/dialplan/default/01_thm.xml:
+		<include>
+		  <extension name="thm_local">
+			<!--<condition field="${toll_allow}" expression="local"/> -->
+			<condition field="destination_number" expression="^08(\d{8})$">
+			  <action application="lcr" data="$0"/>
+			  <action application="bridge" data="${lcr_auto_route}"/>
+			</condition>
+		  </extension>
 
-	  <extension name="thm_mobile_09">
-	    <!--<condition field="${toll_allow}" expression="mobile"/>-->		
-		<condition field="destination_number" expression="^09(\d{8})|01(\d{9})$">
-		  <action application="lcr" data="$0"/>
-		  <action application="bridge" data="${lcr_auto_route}"/>
-		</condition>
-	  </extension>
+		  <extension name="thm_mobile_09">
+			<!--<condition field="${toll_allow}" expression="mobile"/>-->		
+			<condition field="destination_number" expression="^09(\d{8})|01(\d{9})$">
+			  <action application="lcr" data="$0"/>
+			  <action application="bridge" data="${lcr_auto_route}"/>
+			</condition>
+		  </extension>
 
-	  <extension name="thm_longdistance">
-	    <!--<condition field="${toll_allow}" expression="domestic"/>-->
-		<condition field="destination_number" expression="^0[23567](\d+)$">
-		  <action application="lcr" data="$0"/>
-		  <action application="bridge" data="${lcr_auto_route}"/>
-		</condition>
-	  </extension>
+		  <extension name="thm_longdistance">
+			<!--<condition field="${toll_allow}" expression="domestic"/>-->
+			<condition field="destination_number" expression="^0[23567](\d+)$">
+			  <action application="lcr" data="$0"/>
+			  <action application="bridge" data="${lcr_auto_route}"/>
+			</condition>
+		  </extension>
 
-	  <extension name="thm_international">
-	    <!--<condition field="${toll_allow}" expression="international"/>-->
-		<condition field="destination_number" expression="^011(\d+)$">
-		  <action application="lcr" data="$0"/>
-		  <action application="bridge" data="${lcr_auto_route}"/>
-		</condition>
-	  </extension>
+		  <extension name="thm_international">
+			<!--<condition field="${toll_allow}" expression="international"/>-->
+			<condition field="destination_number" expression="^011(\d+)$">
+			  <action application="lcr" data="$0"/>
+			  <action application="bridge" data="${lcr_auto_route}"/>
+			</condition>
+		  </extension>
 
-	</include>
+		</include>

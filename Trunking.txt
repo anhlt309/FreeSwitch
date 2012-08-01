@@ -5,14 +5,21 @@ Trunking cho FreeSwitch
 	2.	noi dung file nhu sau
 	<include>
 	  <gateway name="thm">
-	  <param name="username" value="cluecon"/>
-	  <param name="password" value="2007"/>
-	  <param name="proxy" value="sia-HCM1CA146.fpt.net"/>
-	  <param name="expire-seconds" value="3600"/>
-	  <param name="register" value="true"/>
-	  <param name="retry-seconds" value="30"/>
-	  <param name="ping" value="25"/>
+		  <param name="username" value="cluecon"/>
+		  <param name="password" value="2007"/>
+		  <param name="proxy" value="sia-HCM1CA146.fpt.net"/>
+		  <param name="expire-seconds" value="3600"/>
+		  <param name="register" value="true"/>
+		  <!--<param name="register" value="false"/>-->
+		  <param name="retry-seconds" value="30"/>
+		  <param name="ping" value="25"/>
 	  </gateway>
 	</include>
 
+		+ 	mo ta:
+			-	proxy: dia chi server de trunking vao
+			-	register: co 2 gia tri trua/false
+			-	expire-seconds:	register trong bao lau
+			-	ping: neu FreeSwitch nam sau Modem thi ta enable ping len de Modem mo port cho FreeSwitch
+			
 	3.	Neu trunking nhieu so thi tao nhieu file khac nhau

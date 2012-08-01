@@ -86,6 +86,7 @@ Buoc 2.
 		
 Buoc 3.
 	- config cho EasyRouting 
+		+	cac file tao phai bat dau bang so 0: 0[1-9]_[a-z].xml
 		+ tao file /etc/freeswitch/dialplan/public/00_thm_did.xml
 		<include>
 		  <extension name="public_thm_did">
